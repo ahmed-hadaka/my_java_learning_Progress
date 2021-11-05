@@ -31,7 +31,7 @@ public class calc_charges_for_passengers {
                                 System.out.println("\'F\'- for first class \n \'B\'- for second class \n \'E\'- for third class\n");
                                 Class=sc.next().charAt(0);
                             }
-                            System.out.println("enter the weight for passenger no"+count);   //input weight for passenger's stuff
+                            System.out.println("enter the weight for passenger no"+count);    //input weight for passenger's stuff
                             weight=sc.nextDouble();
                             while(weight<=0){                    //check 
                                 System.out.println("invalid weight");
