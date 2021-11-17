@@ -19,7 +19,7 @@ if(num!=0){
 }
 System.out.println("thanks for Ur time");
 if(flag==1){
-    System.out.println("do U want the avarege : yas/no ?");
+    System.out.println("do U want the avarege :  yas/ no ?");
     String answer=sc.next();
     if(answer=="yas"){
         avg= sum/x;
