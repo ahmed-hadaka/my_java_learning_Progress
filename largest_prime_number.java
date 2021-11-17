@@ -10,7 +10,7 @@ public class largest_prime_number{
             while(num!=0){
                 if(num>=largestNumber){
                     largestNumber=num;
-                }
+                } 
                 num=sc.nextFloat();
             }
             System.out.println("the largest number is :" +largestNumber);
