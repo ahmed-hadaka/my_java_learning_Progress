@@ -10,6 +10,7 @@ num=sc.nextFloat();
 if(num!=0){
     for( x=1;num!=0;x++){
         sum+=num;
+        num=sc.nextFloat();
     }
     System.out.println("the sum is : " +sum);
     flag=1;
