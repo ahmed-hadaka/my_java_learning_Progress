@@ -1,3 +1,3 @@
-# My-projects with JAVA
+# My-programes with JAVA
 
-## These are my primary projects while my path in learning Java
+## These are my primary programes while my path in learning Java
