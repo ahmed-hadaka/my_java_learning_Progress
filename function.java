@@ -1,3 +1,12 @@
+
+/*******************************************************************************
+# function.
+
+# Ahmed Hadaka .
+
+# This is my first practicing with functions .
+*******************************************************************************/
+
 import java.util.Scanner;
 public class function{
     public static void main(String[] args) {

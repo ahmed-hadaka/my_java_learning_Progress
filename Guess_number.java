@@ -1,3 +1,12 @@
+
+/*******************************************************************************
+# Guess_number.
+
+# Ahmed Hadaka .
+
+# This is a program on a Guess number challeng.
+*******************************************************************************/
+
 import java.util.Scanner;
 public class Guess_number {
     public static void main(String[] args) {

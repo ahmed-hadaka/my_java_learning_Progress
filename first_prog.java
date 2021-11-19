@@ -1,4 +1,12 @@
 
+/*******************************************************************************
+# first_prog.
+
+# Ahmed Hadaka .
+
+# This is my first program in java.
+*******************************************************************************/
+
 import java.util.Scanner;
 public class first_prog {
    public static void main(String[] args) {

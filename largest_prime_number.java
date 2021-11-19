@@ -1,3 +1,12 @@
+
+/*******************************************************************************
+# largest_prime_number.
+
+# Ahmed Hadaka .
+
+# This is a program which give U largest prime number from user's inputs.
+*******************************************************************************/
+
 import java.util.Scanner;
 public class largest_prime_number{
     public static void main(String[] args) {

@@ -1,3 +1,12 @@
+
+/*******************************************************************************
+#  ifstatment.
+
+# Ahmed Hadaka .
+
+# This is a program on if statements.
+*******************************************************************************/
+
 import java.util.Scanner;
 public class ifstatment{
      public static void main(String[] args) {

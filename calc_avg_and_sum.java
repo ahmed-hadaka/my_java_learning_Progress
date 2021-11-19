@@ -1,5 +1,12 @@
-import java.util.Scanner;
 
+/*******************************************************************************
+# calc_avg_and_sum
+
+# Ahmed Hadaka
+
+# This program calculate avarage and summation for unlimited numbers
+*******************************************************************************/
+import java.util.Scanner;
 public class calc_avg_and_sum{
     public static void main(String[] args) {
 

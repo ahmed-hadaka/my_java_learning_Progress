@@ -1,3 +1,12 @@
+
+/*******************************************************************************
+# factorial_to_any_number.
+
+# Ahmed Hadaka .
+
+# This program give the factorial to any input number from user .
+*******************************************************************************/
+
 import java.util.Scanner;
 public class factorial_to_any_number {
     public static void main(String[] args) {

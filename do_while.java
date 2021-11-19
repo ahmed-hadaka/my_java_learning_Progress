@@ -1,3 +1,11 @@
+       
+/*******************************************************************************
+# do_while .
+
+# Ahmed Hadaka .
+
+# This program is a practicing on do_while .
+*******************************************************************************/
 import java.util.Scanner;
 public class do_while {
     public static void main(String[] args) {

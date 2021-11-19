@@ -1,3 +1,12 @@
+
+/*******************************************************************************
+#  while_loop2 .
+
+# Ahmed Hadaka .
+
+# This is an application on  while_loop .
+*******************************************************************************/
+
 import java.util.Scanner;
 public class while_loop2 {
     public static void main(String[] args) {

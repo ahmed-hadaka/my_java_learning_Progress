@@ -1,3 +1,12 @@
+
+/*******************************************************************************
+# switch_case .
+
+# Ahmed Hadaka .
+
+# This is an application on switch-case .
+*******************************************************************************/
+
 import java.util.Scanner;
 public class switch_case {
    public static void main(String[] args) {
