@@ -1,6 +1,6 @@
 
 public class Rectangle {
-    private double width;
+    private double width;   //properties
     private double length;
 
     public Rectangle() {  // abstract 1
@@ -13,22 +13,30 @@ public class Rectangle {
         width = w;
  }
 
-    public void setwidth(double w) {
-        width = w;
+ public void setwidth(double w) {   //method 1
+     if (w < 0) {
+         System.out.println("invalid width");
+        }
+        else
+            width = w;
     }
 
-    public void setlength(double l) {
+ public void setlength(double l) {      //method 2
+    if (l < 0) {
+        System.out.println("invalid length");
+            }
+            else
         length = l;
     }
     
-    public double getwidth() {
-       return width;
+    public double getwidth() { //method 3
+        return width;
     }
-        
-    public double getlength() {
+
+    public double getlength() { //method 4
         return length;
     }
-    public double getarea() {
+    public double getarea() {      //method 5
         return length * width;
     }
     
