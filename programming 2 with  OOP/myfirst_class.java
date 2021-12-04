@@ -1,14 +1,13 @@
-
-public class Rectangle {
+public class myfirst_class {
     private double width;   //properties
     private double length;
 
-    public Rectangle() {  // abstract 1
+    public myfirst_class() {  // abstract 1
         length = 10;
         width = 5;
     }
     
-    public Rectangle(double l,double w) {   // abstract 2
+    public myfirst_class(double l,double w) {   // abstract 2
         length = l;
         width = w;
  }
