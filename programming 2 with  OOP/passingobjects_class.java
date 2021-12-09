@@ -20,6 +20,11 @@ public class passingobjects_class {
         length = l;
         width = w;
     }
+
+    public passingobjects_class(passingobjects_class objectcopy) {   //abstract making a copy from object
+        length = objectcopy.length;
+        width = objectcopy.width;
+    }
  public passingobjects_class add_objects(passingobjects_class obj1) {     //method passing objects as an arguments
      passingobjects_class result = new passingobjects_class();
      result.length = this.length + obj1.length;
@@ -27,6 +32,12 @@ public class passingobjects_class {
      return result;
  }
 
+ public boolean isequal(passingobjects_class source) {              //method comparing objects
+    if(this.length==source.length && this.width==source.width)
+        return true;
+        else
+            return false;
+}
  public void setwidth(double w) {   //method 1
      if (w < 0) {
          System.out.println("invalid width");
