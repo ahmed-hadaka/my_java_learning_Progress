@@ -7,14 +7,14 @@ public class SeparateFromLast {
         System.out.println("enter number from 5 digite");
         int k = sc.nextInt();
         int x = k % y;
-        System.out.println(x);
+        System.out.print(x+"  ");
 
         for (int i = 10; i <= 10000; i = i * 10) {
             y = y * 10;
             x = k % y;
             int outPut = x / i;
 
-            System.out.println(outPut);
+            System.out.print(outPut+"  ");
         }
     }
 }
