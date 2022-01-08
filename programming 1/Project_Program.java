@@ -1,3 +1,14 @@
+
+/*******************************************************************************
+# Project_Progrm.
+
+# Ahmed Hadaka .
+
+# This is my project in my first term of studying Software Engineering in my college.
+# It's consist of three parts [Calculator - Array Operations - Quadratic Equation]
+*******************************************************************************/ 
+
+
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
