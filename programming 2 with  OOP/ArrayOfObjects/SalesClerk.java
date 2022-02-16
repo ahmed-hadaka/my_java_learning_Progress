@@ -1,5 +1,3 @@
-// package ArrayOfObjects;
-
 public class SalesClerk
 {
   private String name;         // sales clerk's name

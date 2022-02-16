@@ -1,4 +1,13 @@
-// package ArrayOfObjects;
+/***************************************************************************************** 
+# SalesClerksDriver
+# Ahmed Hadaka
+
+## this program keep track of total sales for each sales clerk in a department store, 
+
+#note:- we used here Array as a practicing, instead of Arraylist.
+*******************************************************************************************/
+
+
 import java.util.Scanner;
 
 public class SalesClerksDriver

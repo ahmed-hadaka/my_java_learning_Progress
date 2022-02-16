@@ -1,5 +1,3 @@
-// package ArrayOfObjects;
-
 class SalesClerks
 {
   private SalesClerk[] clerks;     // contains names and sales ** declaration to a new array from have a data type of SalesClerk
