@@ -4,10 +4,8 @@
 
 ## this program keep track of total sales for each sales clerk in a department store, 
 
-#note:- we used here Array as a practicing, instead of Arraylist.
+#note:- we used here Array of Objects just as a practicing, instead of Arraylist.
 *******************************************************************************************/
-
-
 import java.util.Scanner;
 
 public class SalesClerksDriver
@@ -17,7 +15,7 @@ public class SalesClerksDriver
     Scanner stdIn = new Scanner(System.in);
     SalesClerks clerks = new SalesClerks(2); 
     String name;
-    //new object instantiated from SalesClerks class, which use the constructor SalesClerks()
+    //new  instantiated from SalesClerks class, which use the constructor SalesClerks()
 
     System.out.print("Enter clerk's name (q to quit): ");
     name = stdIn.nextLine();
