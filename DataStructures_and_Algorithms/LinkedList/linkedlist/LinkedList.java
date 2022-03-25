@@ -44,12 +44,15 @@ public class LinkedList {
         return current;
     }
 
-// displayList
-    public void displayList() {
+@Override
+    public String toString() {
         Node current = head;
+        String result = "{ ";
         while (current != null) {
-            current.displayNode();
+           result += current.toString() + ", ";
             current = current.getNext();
         }
+        result += " }";
+        return result;
     }
 }

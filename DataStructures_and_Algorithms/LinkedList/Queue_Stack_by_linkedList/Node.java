@@ -1,4 +1,4 @@
-package linkedlist;
+package Queue_Stack_by_linkedList;
 
 /**
  * Node for Linked list implementation
@@ -8,32 +8,27 @@ package linkedlist;
 public class Node {
 
     private int iData;
-    private double dData;
     private Node next;
 
-    public Node(int iData, double dData) { 
+    public Node(int iData) {
         this.iData = iData;
-        this.dData = dData;
     }
-@Override
+
+    @Override
     public String toString() {
-        return "iData= " + iData + ", dData= " + dData;
+        return "iData= " + iData + ", ";
     }
 
     public void setNext(Node next) {
         this.next = next;
     }
 
-    public int getIData() {
-        return iData;
-    }
-
-    public double getdData() {
-        return dData;
-    }
-
     public Node getNext() {
         return next;
+    }
+
+    public int getIData() {
+        return iData;
     }
 
 }
