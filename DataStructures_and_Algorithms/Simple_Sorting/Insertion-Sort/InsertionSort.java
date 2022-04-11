@@ -7,40 +7,35 @@
  */
 
 public class InsertionSort {
-    private long[] a; // ref to array a
-    private int nElems; // number of data items
-    // --------------------------------------------------------------
+    private long[] a;
+    private int nElems;
 
-    public InsertionSort(int max) // constructor
+    public InsertionSort(int max)
     {
-        a = new long[max]; // create the array
-        nElems = 0; // no items yet
+        a = new long[max];
+        nElems = 0;
     }
 
-    // --------------------------------------------------------------
-    public void insert(long value) // put element into array
+    public void insert(long value)
     {
-        a[nElems] = value; // insert it
-        nElems++; // increment size
-    }
+        a[nElems] = value;
+        nElems++;
 
-    // --------------------------------------------------------------
-    public void display() // displays array contents
+    public void display()
     {
         for (int j = 0; j < nElems; j++)
             System.out.print(a[j] + " ");
         System.out.println("");
     }
 
-    // --------------------------------------------------------------
     public void insertionSort() {
         int in, out, numCopys = 0, numComp = 0;
         for (out = 1; out < nElems; out++) {
             for (in = out; in > 0; in--) {
-                numComp++; // calc number of copys
+                numComp++;
                 if (a[in] < a[in - 1]) {
                     swap(in, in - 1);
-                    numCopys += 3; // calc number of comparisons
+                    numCopys += 3;
                 } else
                     break;
             }
@@ -49,7 +44,6 @@ public class InsertionSort {
                 "sorted sucessfully\n number of copys is: " + numCopys + "\n number of comparisons is: " + numComp
                         + "\n");
     }
-    // --------------------------------------------------------------
 
     private void swap(int one, int two) {
         long temp = a[one];
@@ -57,7 +51,6 @@ public class InsertionSort {
         a[two] = temp;
     }
 
-    // --------------------------------------------------------------
     public double median() {
         double median;
         if (nElems % 2 == 0) {
