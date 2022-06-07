@@ -1,12 +1,11 @@
 package Exercises.Copying_A_List_Backward;
 
 /**
- *
  * @AhmedHadaka
  */
 public class LinkStack {
 
-    private  DoubleLinkedList theList;
+    private DoubleLinkedList theList;
 
     public LinkStack() {
         theList = new DoubleLinkedList();
@@ -17,12 +16,14 @@ public class LinkStack {
     }
 
     public Node pop() {
-       return theList.deleteFirst();
+        return theList.deleteFirst();
     }
+
     public boolean isEmpty() {
         return (theList.isEmpty());
     }
- @Override   
+
+    @Override
     public String toString() {
         return theList.toString();
     }

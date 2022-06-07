@@ -18,27 +18,27 @@ public class LinkedList {
     public Node find(int key) {
         Node current = head;
         while (current.getIData() != key) {
-            if (current.getNext() == null) {
+            current = current.getNext();
+            if (current == null) {
                 return null;
             }
-            current = current.getNext();
         }
         return current;
     }
 
 //delete
     public Node delete(int key) {
-        Node previous = null, current = head;
+        Node current = head, previous = current;
         while (current.getIData() != key) {
-            if (current.getNext() == null) {
-                return null;
-            }
             previous = current;
             current = current.getNext();
+            if (current == null) {
+                return null;
+            }
         }
         if (current == previous) {
             head = current.getNext();
-        } else {
+        }else {
             previous.setNext(current.getNext());
         }
         return current;
@@ -47,12 +47,12 @@ public class LinkedList {
 @Override
     public String toString() {
         Node current = head;
-        String result = "{ ";
+        StringBuilder result = new StringBuilder("{ ");
         while (current != null) {
-           result += current.toString() + ", ";
+           result.append(current).append(", ");
             current = current.getNext();
         }
-        result += " }";
-        return result;
+        result.append(" }");
+        return result.toString();
     }
 }

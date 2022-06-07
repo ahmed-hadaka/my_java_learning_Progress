@@ -28,10 +28,6 @@ public class Node {
         return iData;
     }
 
-    public double getdData() {
-        return dData;
-    }
-
     public Node getNext() {
         return next;
     }

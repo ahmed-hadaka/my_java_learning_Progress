@@ -28,5 +28,6 @@ public class LinkedListApp {
             System.out.println("Can’t delete link");
         }
         System.out.println(list.toString());
+
     }
 }

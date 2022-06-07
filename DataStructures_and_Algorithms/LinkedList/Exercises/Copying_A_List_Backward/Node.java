@@ -1,10 +1,10 @@
 package Exercises.Copying_A_List_Backward;
 
 /**
- *
  * @AhmedHadaka
  */
 public class Node {
+
 
     private int iData;
     private Node next;
@@ -17,16 +17,19 @@ public class Node {
         this.next = next;
     }
 
+
     public Node getNext() {
         return next;
     }
 
     public int getIData() {
+
         return iData;
     }
 
     @Override
     public String toString() {
+
         return "iData= " + iData + ", ";
     }
 

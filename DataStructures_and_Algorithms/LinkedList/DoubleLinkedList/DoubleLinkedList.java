@@ -1,7 +1,6 @@
 package DoubleLinkedList;
 
 /**
- *
  * @AhmedHadaka
  */
 public class DoubleLinkedList {
@@ -36,25 +35,24 @@ public class DoubleLinkedList {
     public void deleteFirst() {
         if (!isEmpty()) {
             Node temp = first;
-            if (first.getNext() == null) {
+            first = first.getNext();
+            if (first == null) {
                 last = null;
             }
-            first = first.getNext();
-            System.out.println("deleted: " + temp.toString());
-            return;
-        }
+            System.out.println("deleted: " + temp);
+        }else
         System.out.println("there is no item to be deleted");
     }
 
     @Override
     public String toString() {
         Node current = first;
-        String result = "{ ";
+        StringBuilder result = new StringBuilder("{ ");
         while (current != null) {
-            result += current.toString();
+            result.append(current);
             current = current.getNext();
         }
-        result += " }";
-        return result;
+        result.append(" }");
+        return result.toString();
     }
 }

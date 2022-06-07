@@ -38,14 +38,12 @@ public class DoublyLinkedList {
     public boolean insertAfter(int key, int iData) {
         Node newNode = new Node(iData);
         Node current = first;
-
         while (current.getiData() != key) {
             current = current.getNext();
             if (current == null) {
                 return false;
             }
         }
-
         if (current == last) {
             last = newNode;
         } else {
@@ -73,13 +71,13 @@ public class DoublyLinkedList {
 
     public Node deleteLast() {
         if (!isEmpty()) {
-            Node temp = last;
+//            Node temp = last;
             if (last.getPrevious() == null) {
                 first = null;
             }
             last = last.getPrevious(); 
             last.setNext(null);
-            return temp;
+            return last;
         }
         return null;
     }
@@ -109,14 +107,14 @@ public class DoublyLinkedList {
     @Override
     public String toString() {
         Node current = first;
-        String result = "{ ";
+        StringBuilder result = new StringBuilder("{ ");
         while (current != last) {
-            result += current.toString();
+            result.append(current.toString());
             current = current.getNext();
         }
-        result += current.toString();
+        result.append(current.toString());
 
-        result += " }";
-        return result;
+        result.append(" }");
+        return result.toString();
     }
 }
