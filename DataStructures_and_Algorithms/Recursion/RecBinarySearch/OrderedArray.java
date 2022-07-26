@@ -21,7 +21,7 @@ public class OrderedArray {
         if (arr[midPoint] == value) {
             return midPoint;
 
-        } else if (lowerBound == upperBound) {
+        } else if (lowerBound >= upperBound) {
             return -1;
         } else {
 
