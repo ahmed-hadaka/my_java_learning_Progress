@@ -29,7 +29,7 @@ public class InsertionSort {
     }
 
     public void insertionSort() {
-        int in, out, numCopys = 0, numComp = 0;
+        int in, out, numCopys = 0, numComp = 0; // num of copies, num of compares
         for (out = 1; out < nElems; out++) {
             for (in = out; in > 0; in--) {
                 numComp++;
