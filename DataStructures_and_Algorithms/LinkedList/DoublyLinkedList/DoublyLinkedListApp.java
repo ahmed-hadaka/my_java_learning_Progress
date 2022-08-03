@@ -1,4 +1,4 @@
-package DoublyLinkedList;
+package java_DS;
 
 /**
  *
@@ -6,28 +6,32 @@ package DoublyLinkedList;
  */
 public class DoublyLinkedListApp {
 
-    public static void main(String[] args) {
-        DoublyLinkedList theList = new DoublyLinkedList();
-        theList.insertFirst(22); 
-        theList.insertFirst(44);
-        theList.insertFirst(66);
-        
-        theList.insertLast(11); 
-        theList.insertLast(33);              
-        theList.insertLast(55);
-        
-        System.out.println(theList.toString()); //  66, 44, 22, 11, 33, 55
-        
-        theList.deleteFirst(); 
-        theList.deleteLast(); 
-        
-        theList.deleteKey(11); 
-        
-        System.out.println(theList.toString()); //  44, 22, 33,
-        
-        theList.insertAfter(22, 77); 
-        theList.insertAfter(33, 88); 
-        
-        System.out.println(theList.toString()); //  44, 22, 77, 33, 88
-    }
+	public static void main(String[] args) {
+		DoublyLinkedList theList = new DoublyLinkedList();
+		theList.insertLast(10);
+		theList.insertLast(20);
+		theList.insertLast(30);
+//
+//		theList.insertLast(40);
+//		theList.insertLast(50);
+//		theList.insertLast(55);
+
+		DoublyLinkedList l1 = new DoublyLinkedList();
+		l1.insertLast(15);
+		l1.insertLast(17);
+		l1.insertLast(22);
+
+		l1.insertLast(24);
+		l1.insertLast(35);
+		l1.insertLast(46);
+		l1.insertLast(49);
+
+		System.out.println(theList.toString());
+		System.out.println(l1.toString());
+
+		theList.merge_2SortedLists(l1);
+
+		System.out.println(theList.toString());
+		System.out.println(l1.toString());
+	}
 }
