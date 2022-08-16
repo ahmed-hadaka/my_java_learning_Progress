@@ -10,6 +10,7 @@ public class test {
 		BinaryTree tree2 = new BinaryTree(1);
 //		BinaryTree tree = new BinaryTree("534*2^+");
 
+
 		tree2.add(Arrays.asList(2, 3), Arrays.asList('L', 'L'));
 		tree2.add(Arrays.asList(4, 5, 6, 8, 9), Arrays.asList('R', 'R', 'R', 'R', 'R'));
 		tree2.add(Arrays.asList(4, 2, 3), Arrays.asList('R', 'L', 'L'));
