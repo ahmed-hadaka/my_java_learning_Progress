@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class test {
 // 23+4*51++
-// 534*2^+
+// 534*2^+ 
 	public static void main(String[] args) {
 //		BinaryTree tree = new BinaryTree(1);
 //		BinaryTree tree1 = new BinaryTree(1);
