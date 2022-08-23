@@ -1,15 +1,17 @@
+package problems_java_DS;
+
 public class Node {
-    private int iData;
+	private int data;
 
-    public Node(int key) {
-        this.iData = key;
-    }
+	public Node(int key) {
+		this.data = key;
+	}
 
-    public int getKey() {
-        return iData;
-    }
+	public int getValue() {
+		return data;
+	}
 
-    public void setKey(int key) {
-        this.iData = key;
-    }
+	public void setValue(int key) {
+		this.data = key;
+	}
 }
