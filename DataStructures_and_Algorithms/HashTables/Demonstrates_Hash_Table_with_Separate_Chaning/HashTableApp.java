@@ -1,77 +1,51 @@
-package Demonstrates_Hash_Table_with_Separate_Chaning;
+package problems_java_DS.Demonstrates_Hash_Table_with_Separate_Chaning;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class HashTableApp {
-    public static void main(String[] args) throws IOException {
-        NodeItem aDataItem;
-        int aKey, size, n, keysPerCell;
-        String value;
+	public static void main(String[] args) {
+//		HashTable ht = new HashTable(7);
+//		"cbaebabacd"
+//		"abc"
+		System.out.println(findUniqueAnagrams("cbaebabacd"));
 
-        System.out.print("Enter size of hash table: ");
-        size = getInt();
-        System.out.print("Enter initial number of items: ");
-        n = getInt();
-        keysPerCell = 10;
-        HashTable theHashTable = new HashTable(size);
-        for (int j = 0; j < n; j++) {
-            aKey = (int) (java.lang.Math.random() * keysPerCell * size);
-            theHashTable.insert(aKey, null);
-        }
-        while (true) {
-            boolean exit = false;
-            System.out.print("Enter first letter of ");
-            System.out.print("show, insert, delete, or find: else to exit");
-            char choice = getChar();
-            switch (choice) {
-                case 's' -> theHashTable.displayTable();
-                case 'i' -> {
-                    System.out.print("Enter key to insert: ");
-                    aKey = getInt();
-                    System.out.print("Enter value to insert: ");
-                    value = getString();
-                    theHashTable.insert(aKey, value);
-                }
-                case 'd' -> {
-                    System.out.print("Enter key value to delete: ");
-                    aKey = getInt();
-                    NodeItem deleted = theHashTable.delete(aKey);
-                    if (deleted != null)
-                        System.out.println(aKey + ": deleted");
-                    else
-                        System.out.println("can't find");
-                }
-                case 'f' -> {
-                    System.out.print("Enter key value to find: ");
-                    aKey = getInt();
-                    aDataItem = theHashTable.find(aKey);
-                    if (aDataItem != null) {
-                        System.out.println("Found " + aKey);
-                    } else
-                        System.out.println("can't find ");
-                }
-                default -> exit = true;
-            }
-            if (exit) break;
-        }
-    }
+//		ht.insert(12, "one");
+//		ht.insert(1, "two");
+//		ht.insert(34, "three");
+//		ht.insert(8, "four");
+//		ht.insert(3, "five");
+//		ht.insert(5, "six");
+//		ht.insert(47, "one");
+//		ht.insert(14, "two");
+//		ht.insert(343, "three");
+//		ht.insert(48, "four");
+//		ht.insert(52, "five");
+//		ht.insert(95, "six");
+//
+//		ht.displayTable();
+	}
 
-    public static String getString() throws IOException {
-        InputStreamReader ins = new InputStreamReader(System.in);
-        BufferedReader buf = new BufferedReader(ins);
-        String str = buf.readLine();
-        return str;
-    }
+	// ---------- find Unique Anagrams (approach 1) -> O(L^3 logL) ---------
 
-    public static int getInt() throws IOException {
-        int n = Integer.parseInt(getString());
-        return n;
-    }
+	public static int findUniqueAnagrams(String s) { // O(L^3 logL)
+		Set<String> set = new HashSet<>();
+		int len = s.length();
+		int totalSubStrings = len * (len + 1) / 2;
+		for (int i = len - 1; i >= 0; i--) {// generate all substrings o(l)
+			for (int j = 0; j <= i; j++) { // o(l)
+				String sorted = sort(s.substring(j, i + 1)); // sort -> o(l logl)
+				set.add(sorted); // add -> o(l)
+			}
+		}
+		return totalSubStrings - set.size();
+	}
 
-    public static char getChar() throws IOException {
-        char ch = getString().charAt(0);
-        return ch;
-    }
+	private static String sort(String s) {
+		char[] temp = s.toCharArray();
+		Arrays.sort(temp);
+		return new String(temp);
+	}
+
 }

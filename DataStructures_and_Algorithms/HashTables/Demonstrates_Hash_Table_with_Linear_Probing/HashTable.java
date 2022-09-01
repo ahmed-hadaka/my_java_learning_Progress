@@ -1,87 +1,88 @@
-package Demonstrates_Hash_Table_with_Linear_Probing;
+package problems_java_DS.Demonstrates_Hash_Table_with_Linear_Probing;
 
 public class HashTable {
-    private DataItem[] hashArray;
-    private DataItem nonItem;
-    private int size;
+	private DataItem[] hashArray;
+	private final DataItem DELETED;
+	private int size;
 
-    public HashTable(int size) {
-        this.size = size;
-        hashArray = new DataItem[size];
-        nonItem = new DataItem(-1, null);
-    }
+	public HashTable(int size) {
+		this.size = size;
+		hashArray = new DataItem[size];
+		DELETED = new DataItem(-1, null);
+	}
 
-    public void insert(int hashKey, String value) { // assumes not full
-        DataItem newItem = new DataItem(hashKey, value);
-        int key = hashFun(hashKey);
-        while (hashArray[key] != null && hashArray[key].getKey() != -1) {
-            key++;
+	public boolean insert(int hashKey, String value) {
+		int key = hashFun(hashKey);
+
+		for (int i = 0; i < size; i++) {
+			if (hashArray[key] == null || hashArray[key].getKey() == -1) {
+				DataItem newItem = new DataItem(hashKey, value);
+				hashArray[key] = newItem;
+				return true;
+			} else if (hashArray[key].getKey() == hashKey) { // exist -> update
+				hashArray[key].updateNode(hashKey, value);
+				return true;
+			}
+			key++;
 //          key += step(key);   in double hashing
-            key %= size;    // wraparound
-        }
-        hashArray[key] = newItem;
-    }
+			key %= size; // wrap_around
+		}
+		return false;
+	}
 
-    public DataItem find(int hashKey) {
-        int key = hashFun(hashKey);
-        while (hashArray[key] != null) {
-            if (hashArray[key].getKey() == hashKey)
-                return hashArray[key];
-            key++;
-//          key += step(key);   in double hashing
-            key %= size;
-        }
-        return null; // not found
-    }
+	public DataItem delete(int hashKey) {
+		int key = hashFun(hashKey);
 
-    public DataItem delete(int hashKey) {
-        int key = hashFun(hashKey);
-        while (hashArray[key] != null) {
-            if (hashArray[key].getKey() == hashKey) {
-                DataItem temp = hashArray[key];
-                hashArray[key] = nonItem;
-                return temp;
-            }
-            ++key;
-//          key += step(key);   in double hashing
-            key %= size;
-        }
-        return null; // not found
-    }
+		for (int i = 0; i < size; i++) {
+			if (hashArray[key] == null) // can't found it
+				break;
+			if (hashArray[key].getKey() == hashKey) {// found it
+				DataItem temp = hashArray[key];
+				hashArray[key] = DELETED;
+				return temp;
+			}
+			key++;
+//        key += step(key);   in double hashing
+			key %= size;
+		}
+		return null;
+	}
 
-    public int hashFun(int hashKey) {
-        return hashKey % size;
-    }
+	public DataItem find(int hashKey) {
+		int key = hashFun(hashKey);
 
-    /* in double hashing, you would like add this method */
+		for (int i = 0; i < size; i++) {
+			if (hashArray[key] == null) // can't found it
+				break;
+			if (hashArray[key].getKey() == hashKey) {// found it
+				return hashArray[key];
+			}
+			key++;
+//        key += step(key);   in double hashing
+			key %= size;
+		}
+		return null;
+	}
+
+	public int hashFun(int hashKey) {
+		return hashKey % size;
+	}
+
+	/* in double hashing, you would like add this method */
 
 //    public int step(int hashKey) {
 //        return 5 - hashKey % 5;
 //    }
 
-    /* in hashing Strings, you would like use this method */
-
-//    public int hashFunStr(String key) {
-//        int hashV = 0, charC;
-//        double p = 0;
-//        for (int i = key.length() - 1; i >= 0; i--) {
-//            charC = key.charAt(i);
-//            hashV += (charC * Math.pow(p, 27d) % size);
-//            p++;
-//        }
-//        return hashV;
-//    }
-
-
-    public void displayTable() {
-        StringBuilder str = new StringBuilder("[ ");
-        for (DataItem dataItem : hashArray) {
-            if (dataItem != null)
-                str.append(dataItem.getKey()).append(":").append(dataItem.getValue()).append(", ");
-            else
-                str.append("__, ");
-        }
-        str.append("]");
-        System.out.println(str);
-    }
+	public void displayTable() {
+		StringBuilder str = new StringBuilder("[ ");
+		for (DataItem dataItem : hashArray) {
+			if (dataItem != null)
+				str.append(dataItem.getKey()).append(":").append(dataItem.getValue()).append(", ");
+			else
+				str.append("__, ");
+		}
+		str.append("]");
+		System.out.println(str);
+	}
 }

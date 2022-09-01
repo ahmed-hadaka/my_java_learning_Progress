@@ -1,75 +1,92 @@
-package Demonstrates_Hash_Table_with_Separate_Chaning;
+package problems_java_DS.Demonstrates_Hash_Table_with_Separate_Chaning;
 
 /**
  * @AhmedHadaka
  */
 public class SortedList {
 
-    private NodeItem first;
+	private NodeItem head;
 
-    public void insert(NodeItem newNode) {
-        int hashKey = newNode.getHashKey();
-        NodeItem current = first;
-        NodeItem previous = null;
+	public void insert(NodeItem newNode) {
+		int hashKey = newNode.getHashKey();
+		NodeItem current = head;
+		NodeItem previous = null;
+		boolean update = false;
 
-        while (current != null && hashKey > current.getHashKey()) {
-            previous = current;
-            current = current.getNext();
-        }
-        if (previous == null) { // can't enter the loop coz, key < current.idata || array is empty
-            first = newNode;
-        } else { // exit from the loop with (current = null || current hold a node) & previous hold a node
-            previous.setNext(newNode);
-        }
-        newNode.setNext(current);
-    }
+		while (current != null && hashKey > current.getHashKey()) {
+			previous = current;
+			current = current.getNext();
+		}
 
-    public NodeItem delete(int hashKey) {
-        if (!isEmpty()) {
-            NodeItem current = first;
-            NodeItem previous = current;
-            while (current.getHashKey() != hashKey) {
-                previous = current;
-                current = current.getNext();
-                if (current == null)
-                    return null;
-            }
-            if (current == previous) {
-                first = current.getNext();
-            } else {
-                previous.setNext(current.getNext());
-            }
-            return current;
-        }
-        return null;
-    }
+		if (previous == null) { // there is no head or our hash_key < head.hash_key
+			head = newNode;
 
-    public NodeItem find(int hashKey) {
-        if (!isEmpty()) {
-            NodeItem current = first;
-            while (current != null && current.getHashKey() != hashKey) {
-                current = current.getNext();
-                if (current == null)
-                    return null;
-            }
-            return current;
-        }
-        return null;
-    }
+		} else if (current == null || current.getHashKey() != hashKey) {// found appropriate position
+			previous.setNext(newNode);
+		}
 
-    public boolean isEmpty() {
-        return (first == null);
-    }
+		else { // exist => update value
+			current.updateValue(newNode.getValue());
+			update = true;
+		}
 
-    @Override
-    public String toString() {
-        NodeItem current = first;
-        String result = "{ ";
-        while (current != null) {
-            result += current.toString();
-            current = current.getNext();
-        }
-        result += " }";
-        return result;
-    }
+		if (!update)
+			newNode.setNext(current);
+	}
+
+	public NodeItem delete(int hashKey) {
+		if (!isEmpty()) {
+			NodeItem current = head;
+			NodeItem previous = current;
+
+			while (current.getHashKey() != hashKey) {
+				previous = current;
+				current = current.getNext();
+				if (current == null)
+					return null;
+			}
+			if (current == previous) {
+				head = current.getNext();
+			} else {
+				previous.setNext(current.getNext());
+			}
+			return current;
+		}
+		return null;
+	}
+
+	public NodeItem deleteFirst() {
+		NodeItem temp = head;
+		head = head.getNext();
+		return temp;
+	}
+
+	public NodeItem find(int hashKey) {
+		if (!isEmpty()) {
+			NodeItem current = head;
+			while (current.getHashKey() != hashKey) {
+				current = current.getNext();
+				if (current == null)
+					return null;
+			}
+			return current;
+		}
+		return null;
+	}
+
+	public boolean isEmpty() {
+		return (head == null);
+	}
+
+	@Override
+	public String toString() {
+		NodeItem current = head;
+		String result = "{ ";
+		while (current != null) {
+			result += current.toString();
+			current = current.getNext();
+		}
+		result += " }";
+		return result;
+	}
 }
