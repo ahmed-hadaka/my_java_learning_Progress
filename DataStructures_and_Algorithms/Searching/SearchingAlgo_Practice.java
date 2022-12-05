@@ -391,4 +391,27 @@ public class SearchingAlgo_Practice {
 	private static int numOfMissingElem(int[] nums, int index) {
 		return nums[index] - 1 - index;
 	}
+	
+	// leetcode.com/problems/kth-smallest-number-in-multiplication-table/ (hard)
+		public int findKthNumber(int m, int n, int k) {
+			int st = 1, end = m * n, mid, kthSmallest = 1;
+			while (st <= end) {
+				mid = st + (end - st) / 2;
+				if (numElementsLessThanMe(m, n, mid) >= k) {
+					kthSmallest = mid;
+					end = mid - 1;
+				} else {
+					st = mid + 1;
+				}
+			}
+			return kthSmallest;
+		}
+
+		private int nElementsLessThanMe(int rows, int cols, int mid) {
+			int count = 0;
+			for (int r = 1; r <= rows; r++) {
+				count += Math.min(mid/r, cols);
+			}
+			return count;
+		}
 }
