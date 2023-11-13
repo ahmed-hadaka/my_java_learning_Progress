@@ -1,0 +1,6 @@
+- The server can handle multiple clients by giving every client
+  It's own Thread.
+
+- Every client can read and write at the same time(not actually
+at the same time) using the main-thread to read and the
+custom thread- I declared - to write.
